@@ -1,0 +1,14 @@
+title = "Register School"
+url = "/register-organization"
+layout = "default"
+description = "Calisph'Air organization/school registration"
+
+[CnesMeteo\User\Components\Account account]
+redirect = "home"
+paramCode = "code"
+accountAction = "registerOrganization"
+organization = "1"
+classroom = "1"
+orgtype = "high_school"
+==
+{% component 'account' %}

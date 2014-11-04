@@ -1,0 +1,16 @@
+title = "Register student"
+url = "/register-student"
+layout = "default"
+description = "Calisph'Air Student registration"
+
+[CnesMeteo\User\Components\Account account]
+redirect = "user/profile"
+paramCode = "code"
+accountAction = "registerUser"
+userType = "student"
+organization = "1"
+classroom = "1"
+country = "1"
+state = "6"
+==
+{% component 'account' %}

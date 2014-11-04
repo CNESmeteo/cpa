@@ -1,0 +1,11 @@
+title = "profile"
+url = "/user-profile"
+layout = "default"
+description = "User profile"
+
+[CnesMeteo\User\Components\Account account]
+redirect = "home"
+paramCode = "code"
+accountAction = "registerUser"
+==
+{% partial 'account::update' %}

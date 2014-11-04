@@ -1,0 +1,63 @@
+title = "Registration menu"
+url = "/register-menu"
+layout = "default"
+==
+<?php
+public function onStart()
+{
+    // Get UserSettings -> Enable Student Register
+    $this['registerStudent_enabled'] = (bool)\RainLab\User\Models\Settings::get('student_register_status', true);
+}
+?>
+==
+{% set RegisterStudentLink = 'user/register-student'|page %}
+{% set RegisterTeacherLink = 'user/register-teacher'|page %}
+{% set RegisterOrganizationLink = 'user/register-organization'|page %}
+
+<div class="signin-container">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="signin">
+                    <div class="signin-screen">
+                        <div class="signin-icon">
+                            <img src="{{ 'assets/images/logo.png'|theme }}" alt="Welcome to Calisph'Air" />
+                            <h4>Sign up to <small>Calisph'Air</small></h4>
+
+                        </div>
+
+                        <div class="signin-form">
+                            <div class="row">
+
+                                {% if registerStudent_enabled %}
+                                <div class="col-lg-6 col-md-6">
+                                    <a class="btn btn-danger btn-lg btn-block" href="{{ RegisterStudentLink }}">
+                                        <strong>Register as Student</strong>
+                                        <hr>
+                                        <img src="{{ 'assets/images/users/student2-128.png'|theme }}" alt="Student Register" />
+                                    </a>
+
+                                </div>
+                                {% endif %}
+
+                                <div {% if registerStudent_enabled %} class="col-lg-6 col-md-6 {% else %} class="col-lg-12 col-md-12 {% endif %}">
+                                    <a class="btn btn-inverse btn-lg btn-block" href="{{ RegisterTeacherLink }}">
+                                        <strong>Register as Teacher</strong>
+                                        <hr>
+                                        <img src="{{ 'assets/images/users/teacher-128.png'|theme }}" alt="Teacher Register" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <br>
+                            <a class="link" href="{{ RegisterOrganizationLink }}">Or register your <strong>School!</strong></a>.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

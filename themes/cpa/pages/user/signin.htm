@@ -1,0 +1,10 @@
+title = "Sign in"
+url = "user/signin"
+layout = "default"
+
+[CnesMeteo\User\Components\Account account]
+redirect = "home"
+paramCode = "code"
+accountAction = "signin"
+==
+{% component 'account' %}
