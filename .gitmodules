@@ -1,0 +1,3 @@
+[submodule "plugins/cnesmeteo"]
+	path = plugins/cnesmeteo
+	url = https://github.com/CNESmeteo/cnesmeteo.git
